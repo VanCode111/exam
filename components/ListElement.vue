@@ -52,9 +52,6 @@
       <v-card-text class="text--primary">
         <div>Площадь: {{ square }}</div>
       </v-card-text>
-      <v-card-text class="text--primary">
-        <div>Объем двигателя: {{ engine_volume }}</div>
-      </v-card-text>
 
       <v-card-actions>
         <v-btn color="orange" text> Открыть</v-btn>
