@@ -1,15 +1,65 @@
 <template>
-  <div :class="'list-element ' + (type == 'apartment' ? 'apartment' : 'car')">
-    <img :src="url" alt="" />
-    <p v-if="type">{{ type == "apartment" ? "Квартира" : "Машина" }}</p>
-    <p v-if="city">Город: {{ city }}</p>
-    <p v-if="address">Адрес: {{ address }}</p>
-    <p v-if="phone">Телефон: {{ phone }}</p>
-    <p v-if="price">Цена: {{ price }}</p>
-    <p v-if="model">Модель: {{ model }}</p>
-    <p v-if="car_type">Тип машины: {{ car_type }}</p>
-    <p v-if="engine_volume">Громкость мотора: {{ engine_volume }}</p>
-    <p v-if="engine_power">Сила мотора: {{ engine_power }}</p>
+  <div class="card">
+    <v-card class="mx-auto" max-width="400" v-if="type == 'car'">
+      <v-img class="white--text align-end" height="200px" src="car_img.jpg">
+        <v-card-title class="title">{{ model }} </v-card-title>
+      </v-img>
+
+      <v-card-subtitle class="pb-0"> {{ price }} ₽ </v-card-subtitle>
+
+      <v-card-text class="text--primary">
+        <div>Город: {{ city }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Адрес: {{ address }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Телефон: {{ phone }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Мощность двигателя: {{ engine_power }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Тип кузова: {{ car_type }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Объем двигателя: {{ engine_volume }}</div>
+      </v-card-text>
+
+      <v-card-actions>
+        <v-btn color="orange" text> Открыть</v-btn>
+      </v-card-actions>
+    </v-card>
+    <v-card v-else class="mx-auto" max-width="400">
+      <v-img class="white--text align-end" height="200px" src="home_img.jpg">
+        <v-card-title class="title">{{ address }} </v-card-title>
+      </v-img>
+
+      <v-card-subtitle class="pb-0"> {{ price }} ₽ </v-card-subtitle>
+
+      <v-card-text class="text--primary">
+        <div>Город: {{ city }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Адрес: {{ address }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Телефон: {{ phone }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Количество комнат: {{ rooms }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Площадь: {{ square }}</div>
+      </v-card-text>
+      <v-card-text class="text--primary">
+        <div>Объем двигателя: {{ engine_volume }}</div>
+      </v-card-text>
+
+      <v-card-actions>
+        <v-btn color="orange" text> Открыть</v-btn>
+      </v-card-actions>
+    </v-card>
   </div>
 </template>
 
@@ -24,6 +74,8 @@ export default {
     price: String,
     model: String,
     car_type: String,
+    square: String,
+    rooms: String,
     engine_volume: String,
     engine_power: String,
   },
@@ -37,6 +89,9 @@ export default {
   & p {
     margin-bottom: 15px;
   }
+}
+.title {
+  color: #ff9800;
 }
 .apartment {
   background-color: #9cb8ff;

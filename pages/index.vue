@@ -33,6 +33,7 @@ export default {
 <style lang="scss" scoped>
 .main {
   padding: 30px;
+  color: black;
   &__text-block {
     width: 70%;
   }

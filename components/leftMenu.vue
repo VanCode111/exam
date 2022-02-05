@@ -11,25 +11,32 @@
         </li>
       </ul>
     </nav>
-    <div v-if="$store.state.widget.widget" class="vidget">
-      <p>Машин: {{ $store.state.widget.widget.cars }}</p>
-      <p>Квартир: {{ $store.state.widget.widget.apartments }}</p>
-    </div>
+    <widget v-if="$store.state.widget.widget" />
   </div>
 </template>
 
+<script>
+import widget from "./widget.vue";
+export default {
+  components: {
+    widget,
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .left-menu {
+  padding: 15px;
   &__list {
     list-style: none;
-    padding: 30px;
+    padding: 15px;
   }
   &__item {
     margin-bottom: 10px;
   }
   & a {
     text-decoration: none;
-    color: black;
+    color: white;
     transition: all 0.3s;
     &:hover {
       opacity: 0.6;

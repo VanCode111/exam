@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <v-app class="app0" light>
     <NavBar />
     <main class="content">
       <div class="app__left">
@@ -9,7 +9,7 @@
         <Nuxt />
       </div>
     </main>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -56,9 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
-* {
-  font-family: "Montserrat", sans-serif;
-}
+
 .content {
   display: flex;
   min-height: calc(100vh - 60px);

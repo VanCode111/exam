@@ -1,6 +1,6 @@
 <template>
   <div class="list-page">
-    <Button text="Открыть форму" @clicks="toggleForm" />
+    <v-btn @click="toggleForm" class="btn">Открыть форму</v-btn>
     <FormComponent v-if="formOpen" />
     <list-component />
   </div>
@@ -24,8 +24,7 @@ export default {
     };
   },
   async mounted() {
-    const data = await axios.get("https://demo-api.vsdev.space/api/brom/sales");
-    this.$store.commit("list/add", data.data);
+    this.$store.dispatch("list/loadList");
     const datas = await axios.get(
       "https://demo-api.vsdev.space/api/brom/sales/form"
     );
@@ -43,6 +42,10 @@ export default {
 
 <style lang="scss" scoped>
 .list-page {
-  padding: 30px;
+  padding: 20px;
+  padding-right: 50px;
+}
+.btn {
+  margin-bottom: 30px;
 }
 </style>

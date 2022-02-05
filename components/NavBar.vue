@@ -22,6 +22,7 @@
   }
   .second-title {
     color: white;
+    margin: 0;
     margin-left: 20px;
   }
 }

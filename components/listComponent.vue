@@ -12,6 +12,8 @@
         :phone="item.phone"
         :price="item.price"
         :model="item.model"
+        :square="item.square"
+        :rooms="item.rooms"
         :car_type="item.car_type"
         :engine_volume="item.engine_volume"
         :engine_power="item.engine_power"
