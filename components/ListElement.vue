@@ -30,7 +30,7 @@
         <v-btn color="orange" text> Открыть</v-btn>
       </v-card-actions>
     </v-card>
-    <v-card v-else class="mx-auto" max-width="400">
+    <v-card light v-else class="mx-auto apartment" max-width="400">
       <v-img class="white--text align-end" height="200px" src="home_img.jpg">
         <v-card-title class="title">{{ address }} </v-card-title>
       </v-img>
@@ -90,6 +90,7 @@ export default {
     margin-bottom: 15px;
   }
 }
+
 .title {
   color: #ff9800;
 }

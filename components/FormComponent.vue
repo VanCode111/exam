@@ -1,63 +1,61 @@
 <template>
   <v-form lazy-validation ref="form" v-if="$store.state.fields.fields.fields">
-    <v-container fluid>
-      <div
-        class="input"
-        v-for="field in $store.state.fields.fields.fields
-          ? Object.entries($store.state.fields.fields.fields)
-          : []"
-        :key="field[0]"
-      >
-        <v-select
-          v-model="filledFields[field[0]]"
-          v-if="field[1].type == 'select'"
-          :items="field[1].values"
-          :label="field[1].title"
-          :rules="nameRules"
-          solo
-          required
-        ></v-select>
-        <v-text-field
-          v-else
-          required
-          :rules="nameRules"
-          v-model="filledFields[field[0]]"
-          :label="field[1].title"
-          solo
-        ></v-text-field>
-      </div>
-      <div
-        class="input"
-        v-for="field in $store.state.fields.fields.reference_fields &&
-        filledFields.type
-          ? Object.entries(
-              $store.state.fields.fields.reference_fields[
-                `type.${filledFields.type}`
-              ]
-            )
-          : []"
-        :key="field[0]"
-      >
-        <v-select
-          v-model="filledFields[field[0]]"
-          v-if="field[1].type == 'select'"
-          :items="field[1].values"
-          :label="field[1].title"
-          :rules="nameRules"
-          solo
-          required
-        ></v-select>
-        <v-text-field
-          v-else
-          required
-          :rules="nameRules"
-          v-model="filledFields[field[0]]"
-          :label="field[1].title"
-          solo
-        ></v-text-field>
-      </div>
-      <v-btn @click="sendForm">Добавить</v-btn>
-    </v-container>
+    <div
+      class="input"
+      v-for="field in $store.state.fields.fields.fields
+        ? Object.entries($store.state.fields.fields.fields)
+        : []"
+      :key="field[0]"
+    >
+      <v-select
+        v-model="filledFields[field[0]]"
+        v-if="field[1].type == 'select'"
+        :items="field[1].values"
+        :label="field[1].title"
+        :rules="nameRules"
+        solo
+        required
+      ></v-select>
+      <v-text-field
+        v-else
+        required
+        :rules="nameRules"
+        v-model="filledFields[field[0]]"
+        :label="field[1].title"
+        solo
+      ></v-text-field>
+    </div>
+    <div
+      class="input"
+      v-for="field in $store.state.fields.fields.reference_fields &&
+      filledFields.type
+        ? Object.entries(
+            $store.state.fields.fields.reference_fields[
+              `type.${filledFields.type}`
+            ]
+          )
+        : []"
+      :key="field[0]"
+    >
+      <v-select
+        v-model="filledFields[field[0]]"
+        v-if="field[1].type == 'select'"
+        :items="field[1].values"
+        :label="field[1].title"
+        :rules="nameRules"
+        solo
+        required
+      ></v-select>
+      <v-text-field
+        v-else
+        required
+        :rules="nameRules"
+        v-model="filledFields[field[0]]"
+        :label="field[1].title"
+        solo
+      ></v-text-field>
+    </div>
+    <v-btn @click="sendForm" class="btn">Добавить</v-btn>
   </v-form>
 </template>
 
@@ -118,6 +116,9 @@ export default {
   &__input {
     width: 100%;
   }
+}
+.btn {
+  margin-bottom: 30px;
 }
 #inspire {
   background-color: transparent;

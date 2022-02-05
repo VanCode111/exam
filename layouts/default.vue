@@ -56,7 +56,9 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
-
+body {
+  overflow: hidden;
+}
 .content {
   display: flex;
   min-height: calc(100vh - 60px);
