@@ -19,7 +19,7 @@ export default {
   },
   async asyncData() {
     const data = await axios.get(
-      "https://demo-api.vsdev.space/api/brom/home_page"
+      "https://demo-api.vsdev.space/api/brom/about_page"
     );
     return {
       text: data.data.text,
