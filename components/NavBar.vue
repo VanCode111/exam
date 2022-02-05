@@ -2,6 +2,7 @@
   <header class="header">
     <div class="header__inner">
       <h5 class="logo">Brom.ru</h5>
+      <p class="second-title">Квартиры и машины</p>
     </div>
   </header>
 </template>
@@ -18,6 +19,10 @@
   .logo {
     color: white;
     font-size: 20px;
+  }
+  .second-title {
+    color: white;
+    margin-left: 20px;
   }
 }
 </style>

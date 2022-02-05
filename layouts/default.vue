@@ -61,7 +61,7 @@ export default {
 }
 .content {
   display: flex;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
 }
 .app {
   &__right {
