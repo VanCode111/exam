@@ -44,7 +44,7 @@ export default {
 .list-component {
   &__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
   }
 }

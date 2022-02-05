@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <v-card class="mx-auto" max-width="400" v-if="type == 'car'">
+    <v-card class="mx-auto" max-width="400px" v-if="type == 'car'">
       <v-img class="white--text align-end" height="200px" src="car_img.jpg">
         <v-card-title class="title">{{ model }} </v-card-title>
       </v-img>
